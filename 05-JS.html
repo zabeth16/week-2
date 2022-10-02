@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <meta meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>05-JS</title><!--JavaScript-Q5-2022.09.30-->
+</head>
+<body>
+<script>
+function twoSum(nums, target) {
+  // your code here
+  // 可以研究Map功能
+  // nums 本身是一個陣列，最終我要顯示出第幾個[]加成的target
+  // let mapA = new Map();
+  // console.log(mapA.twoSum)
+  let sum = 0;
+
+  for (let j = 0; j < nums.length; j++) {
+    let sum = target - nums[j];
+    for (let k = j + 1; k < nums.length; k++) {
+        
+      if (nums[k] == sum)
+        return [j, k];
+
+    }
+
+  }
+
+}
+
+
+let result = twoSum([2, 11, 7, 15], 9);
+console.log(result); // show [0, 2] because nums[0]+nums[2] is 9
+
+
+
+
+
+</script>  
+</body>
+</html>

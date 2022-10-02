@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <meta meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>04-JS</title><!--JavaScript-Q3-2022.10.01-->
+</head>
+<body>
+<script>
+//這是查到的以value排序陣列的方法
+//額額額不可以排序
+/*
+var numbers = [4, 2, 5, 1, 3];
+numbers.sort(function(a, b) {
+  return b - a;
+});
+console.log(numbers);
+*/
+
+//同學建議用關鍵字-ifinity來找，但我看了一堆資料看得不太理解
+//目前我的寫法是用不到負無窮這個概念
+//查到可能相關的算式
+/*
+function findMin(array) {
+  let min = Infinity;
+  for (const item of array) {
+    min = Math.min(min, item);
+  }
+  return min;
+
+}
+
+findMin([5, 2, 1, 4]); // => 1
+*/
+
+function maxProduct(nums) {
+  // 請用你的程式補完這個函式的區塊
+
+  //nums本身是一個陣列[n1,n2,n3,n4]，2~4個不等
+  //迴圈可能會需要兩層
+  /*
+    - 每個值都要互相乘一下，所以需要對 array 裡的值跑迴圈來相乘，迴圈可能會需要兩層
+  - 相乘的過程中，會需要知道目前最大值是誰，每次乘的過程中跟它做比較，比他大就換成新的最大值
+  - 一開始相乘的時候還沒有最大值，那第一個相乘的結果要怎麼比較？
+  */
+
+  //console.log(nums.length); 
+
+  //先寫迴圈把陣列資料都拿來互乘，
+  //在一個迴圈內還會再需要另一個迴圈，因為要把所有的可以相乘的結果都乘一遍
+  let a1 = new Array();
+  let multiA = 0;
+  let result = 0;
+  for (let a = 0; a < nums.length - 1; a++) {
+    //如何做相乘後又再比較結果的最大值?
+
+
+    for (let b = a + 1; b < nums.length; b++) {
+
+
+      let multiA = nums[a] * nums[b];
+
+      //console.log(multiA);
+      //我有這串數值結果，不知道怎麼變成value來做取出最大值的方法。  
+
+
+      a1.push(multiA);
+      //console.log(a1);
+
+      //該如何讓我result變成value，才能適用於Math.max()括號內顯示數字結果   
+      //用到了展開運算符(Spread Operator)，超神的點點點
+      result = Math.max(...a1);
+      //console.log(result);
+
+
+
+      //很笨的把數值丟到陣列後，再超笨的一個個比對
+      //已解決，不使用這個笨笨方法
+      //result = Math.max(a1[a], a1[a + 1], a1[a + 2], a1[a + b]);
+      //console.log(result);
+
+       
+
+    }
+
+
+  }
+
+  return console.log(result);
+
+}
+
+
+
+maxProduct([5, 20, 2, 6]) // 得到 120
+maxProduct([10, -20, 0, 3]) // 得到 30
+maxProduct([10, -20, 0, -3]) // 得到 60
+maxProduct([-1, 2]) // 得到 -2
+maxProduct([-1, 0, 2]) // 得到 0 或 -0
+maxProduct([5, -1, -2, 0]) // 得到 2
+maxProduct([-5, -2]) // 得到 10
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <meta meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WEEK-2</title><!--JavaScript第一題-->
+</head>
+<body>
+<script>
+
+
+//return是用來結束函式的
+
+//我最終要得是印出 min+step總和 ，且min+=step結果要<=max
+//先做一個min+setp的迴圈在函式裡面
+function caculate(min,max,step){
+
+    let result = 0;
+
+    for( let a = min ; a <= max ; a += step ){
+        result = result + a ;
+    }
+    
+    console.log(result);
+  
+}
+
+
+caculate(1,3,1);
+caculate(4,8,2);
+caculate(-1,2,2);
+
+
+</script>
+</body>
+</html>
+<!--
+完成以下函式，在函式中使用迴圈計算最小值到最大值之間，固定間隔的整數總和。其中你可
+以假設 max 一定大於 min 且為整數，step 為正整數。
+
+function calculate(min, max, step){
+    // 請用你的程式補完這個函式的區塊
+    }
+    calculate(1, 3, 1); // 你的程式要能夠計算 1+2+3，最後印出 6
+    calculate(4, 8, 2); // 你的程式要能夠計算 4+6+8，最後印出 18
+    calculate(-1, 2, 2); // 你的程式要能夠計算 -1+1，最後印出 0
+-->

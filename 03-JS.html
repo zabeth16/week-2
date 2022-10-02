@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <meta meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>03-JS</title><!--JavaScript-Q3-2022.09.30-->
+</head>
+<body>
+<script>
+//第三題
+function func(a) {
+  let func2 = function(b, c) {
+    let ans = a + (b * c) ;
+    return console.log(ans);
+  }
+
+  return func2;
+
+  //咦咦怎麼印不出來
+  //結果只是我沒在算式裡寫出要顯示天啊，已解決。
+
+};
+
+func(2)(3, 4);
+func(5)(1, -5);
+func(-3)(2, 9);
+
+    </script>
+
+
+</body>
+
+</html>

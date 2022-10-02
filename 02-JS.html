@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <meta meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WEEK-2</title><!--JavaScript第2題-->
+</head>
+<body>
+<script>
+
+function avg(data) {
+  // 請用你的程式補完這個函式的區塊
+  // 我的employees是陣列物件
+  // 我如何從陣列物件裡面，再取出我要的某個物件資料?
+
+
+  let count = 0;
+  let total = 0;
+  for (let i = 0; i < data.employees.length; i++) {
+    count ++;
+    if (data.employees[i].manager == true) {
+      count -= 1;
+      continue;
+    }
+    total = total + data.employees[i].salary;
+      
+  }
+
+  console.log(total/count);
+ 
+}
+
+
+avg({
+  "employees": [
+    {
+      "name": "John",
+      "salary": 30000,
+      "manager": false
+    },
+    {
+      "name": "Bob",
+      "salary": 60000,
+      "manager": true
+    },
+    {
+      "name": "Jenny",
+      "salary": 50000,
+      "manager": false
+    },
+    {
+      "name": "Tony",
+      "salary": 40000,
+      "manager": false
+    }
+  ]
+}); // 呼叫 avg 函式
+
+</script>
+</body>
+</html>
